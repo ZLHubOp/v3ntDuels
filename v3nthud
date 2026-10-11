@@ -132,7 +132,10 @@ getgenv().TARGET_BRAINROTS = {
     ["Ginger Cisterna"] = true,
     ["Anpali Babel"] = true,
     ["Rhino Helicopterino"] = true,
-    ["Centrucci Nuclucci"] = true
+    ["Centrucci Nuclucci"] = true,
+    ["Flying Dutchman"] = true,
+    ["Boo Boo Rocket"] = true,
+    ["Dragon Skeletonini"] = true
 }
 getgenv().TARGET_BASE_SKINS = {
     ["Bee Emperor"] = true,
